@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cateloge/screens/login_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,19 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Ecommerce app",
-      home: MyfirstScreen(),
-    );
-  }
-}
-
-class MyfirstScreen extends StatelessWidget {
-  const MyfirstScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: ,
+      theme: ThemeData(
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
+      routes: {
+        "/": (context) => LoginScreen(),
+        "/login": (context) => LoginScreen(),
+      },
     );
   }
 }
